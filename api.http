@@ -16,3 +16,8 @@ Content-Type: application/json
   "name": "Jackciel Felix",
   "email": "jacktest24422@gmail.com"
 }
+
+###
+
+GET http://localhost:3333/events/baef88d1-ed26-4437-8e24-87ae1cb49023
+

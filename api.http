@@ -2,7 +2,17 @@ POST http://localhost:3333/events
 Content-Type: application/json
 
 {
-  "title": "test de titulo",
-  "details": "Detalhes do evento",
-  "maximunAttendees": 100
+  "title": "Teste event 3",
+  "details": "detalhess",
+  "maximunAttendees": 2
+}
+
+###
+
+POST http://localhost:3333/events/00b31726-4c0b-4291-8c0c-97e1bb78e50f/attendees
+Content-Type: application/json
+
+{
+  "name": "Jackciel Felix",
+  "email": "jacktest24422@gmail.com"
 }

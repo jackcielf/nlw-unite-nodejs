@@ -8,11 +8,25 @@ datasource db {
 }
 
 model Event {
-  id               String  @id @default(uuid())
+  id               String     @id @default(uuid())
   title            String
   details          String?
-  slug             String  @unique
-  maximunAttendees Int?    @map("maximun_attendees")
+  slug             String     @unique
+  maximunAttendees Int?       @map("maximun_attendees") // Renomeia a coluna 
+  attendees        Attendee[]
 
-  @@map("events")
+  @@map("events") // Renomeia a tabela (não obrigatorio)
+}
+
+model Attendee {
+  id        Int      @id @default(autoincrement())
+  name      String
+  email     String
+  createdAt DateTime @default(now()) @map("created_at")
+  eventId   String   @map("event_id")
+
+  event Event @relation(fields: [eventId], references: [id])
+
+  @@unique([eventId, email]) // Não permite ter o mesmo "email" dentro de um mesmo evento
+  @@map("attendees")
 }

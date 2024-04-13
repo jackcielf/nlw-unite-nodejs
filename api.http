@@ -21,3 +21,6 @@ Content-Type: application/json
 
 GET http://localhost:3333/events/baef88d1-ed26-4437-8e24-87ae1cb49023
 
+###
+
+GET http://localhost:3333/attendees/1
